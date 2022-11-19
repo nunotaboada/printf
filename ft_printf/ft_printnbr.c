@@ -33,24 +33,26 @@ char	*ft_itoa(int nbr)
 {
 	unsigned int	len;
 	char			*str;
+	long int unbr;
 
+	unbr = nbr;
 	len = ft_lenint(nbr);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	if (nbr < 0)
+	if (unbr < 0)
 	{
 		str[0] = '-';/*alterei aqui tinha number = -nbr*/
-		nbr = -nbr;
+		unbr = -unbr;
 	}
-	if (nbr == 0)
+	if (unbr == 0)
 		str[0] = '0';
 	str[len] = '\0';
-	while (nbr)
+	while (unbr)
 	{
-		str[len - 1] = nbr % 10 + 48;
+		str[len - 1] = unbr % 10 + 48;
 		len--;
-		nbr = nbr / 10;
+		unbr = unbr / 10;
 	}
 	return (str);
 }
@@ -61,10 +63,15 @@ int	ft_printnbr(int nbr)
 	char *str;
 	
 	len = 0;
-	str = ft_itoa(nbr);
-	len = ft_printstr(str);
-	free(str);
-	str = NULL;
+	if (nbr == 0)
+		len = write(1, "0", 1);
+	else
+	{	
+		str = ft_itoa(nbr);
+		len = ft_printstr(str);
+		free(str);
+		str = NULL;
+	}	
 	return (len);
 }
 		

@@ -9,7 +9,7 @@ CFLAGS	= -Wall -Wextra -Werror
 CC	= gcc
 RM	= rm -f
 AR	= ar rcs
-LIBFT = libft
+LIBFT	= libft
 INC	= -I .
 
 NAME	= libftprintf.a

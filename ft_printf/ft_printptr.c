@@ -19,8 +19,8 @@ int ft_lenptr (unsigned long long nbr)
     i = 0;
     while (nbr)
     {
-        i++;
         nbr = nbr / 16;
+        i++;
     }
     return (i);
 }
@@ -60,7 +60,7 @@ int ft_printptr(void *ptr)
        len += write (1, "(nil)", 5);
     else
     {
-        write(1, "0x", 2);/*o write devolve a quantidade de char escritos*/
+    	write(1, "0x", 2);
         ft_writeptr(nbr);
         len += ft_lenptr(nbr) + 2;
     }   
