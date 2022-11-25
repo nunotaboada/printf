@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmoreira <nmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nmoreira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 04:50:29 by nmoreira          #+#    #+#             */
-/*   Updated: 2022/11/18 04:50:29 by nmoreira         ###   ########.fr       */
+/*   Created: 2022/11/19 13:42:55 by nmoreira          #+#    #+#             */
+/*   Updated: 2022/11/19 13:43:02 by nmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_lenint(int nbr)
 
 	len = 0;
 	if (nbr < 0)
-		len++;/* posso ter que multiplicar o nbr por -1*/
+		len++;
 	if (nbr == 0)
 		len = 1;
 	while (nbr)
@@ -32,8 +32,8 @@ int	ft_lenint(int nbr)
 char	*ft_itoa(int nbr)
 {
 	unsigned int	len;
+	long int		unbr;
 	char			*str;
-	long int unbr;
 
 	unbr = nbr;
 	len = ft_lenint(nbr);
@@ -42,7 +42,7 @@ char	*ft_itoa(int nbr)
 		return (NULL);
 	if (unbr < 0)
 	{
-		str[0] = '-';/*alterei aqui tinha number = -nbr*/
+		str[0] = '-';
 		unbr = -unbr;
 	}
 	if (unbr == 0)
@@ -59,9 +59,9 @@ char	*ft_itoa(int nbr)
 
 int	ft_printnbr(int nbr)
 {
-	int	len;
-	char *str;
-	
+	int		len;
+	char	*str;
+
 	len = 0;
 	if (nbr == 0)
 		len = write(1, "0", 1);
@@ -74,9 +74,3 @@ int	ft_printnbr(int nbr)
 	}	
 	return (len);
 }
-		
-	
-		
-
-
-

@@ -6,7 +6,7 @@
 
 
 CFLAGS	= -Wall -Wextra -Werror
-CC	= gcc
+CC	= cc
 RM	= rm -f
 AR	= ar rcs
 LIBFT	= libft
