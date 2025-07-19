@@ -28,7 +28,6 @@ ft_printf/
 ├── ft_printptr.c
 ├── ft_printuint.c
 ├── ft_print_utils.c
-└── main.c (optional, for testing purposes)
 ```
 
 - **ft_printf.h**: Header file with function prototypes and necessary includes.
